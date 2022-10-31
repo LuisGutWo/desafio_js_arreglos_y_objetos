@@ -1,0 +1,18 @@
+{
+  "name": "desafio_js_arreglos_y_objetos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "sass --watch sass/main.scss css/style.css",
+    "build": "sass sass/main.scss css/style.css --style=compressed"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.55.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.2"
+  }
+}
