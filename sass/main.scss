@@ -127,24 +127,30 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
     .main-section {
         @extend .dflex-extend;
         grid-area: main-cards;
-        
+        max-width: 100vw;
+
         h4 {
             margin: 10px 0 10px 0;
         }
-        
+
         .row {
             padding: 1rem;
             row-gap: 1rem;
 
             .card-body {
+                @extend .dflex-extend;
+                min-height: 30vh;
+                padding: 0;
                 background-color: #EAEAEA;
             }
-            .btn {
 
+            .btn {
+                width: 50%;
+                margin: 0;
             }
-            
+
         }
-        
+
 
 
 

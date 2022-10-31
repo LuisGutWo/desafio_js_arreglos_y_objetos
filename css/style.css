@@ -10090,7 +10090,7 @@ progress {
     grid-template-areas: "navbar main-cards main-cards main-cards" "navbar main-cards main-cards main-cards";
   }
 }
-.main-container .dflex-extend, .main-container .main-section, .main-container .navbar .form-section, .main-container .navbar {
+.main-container .dflex-extend, .main-container .main-section .row .card-body, .main-container .main-section, .main-container .navbar .form-section, .main-container .navbar {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10126,6 +10126,7 @@ progress {
 }
 .main-container .main-section {
   grid-area: main-cards;
+  max-width: 100vw;
 }
 .main-container .main-section h4, .main-container .main-section .h4 {
   margin: 10px 0 10px 0;
@@ -10135,7 +10136,13 @@ progress {
   row-gap: 1rem;
 }
 .main-container .main-section .row .card-body {
+  min-height: 30vh;
+  padding: 0;
   background-color: #EAEAEA;
+}
+.main-container .main-section .row .btn {
+  width: 50%;
+  margin: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
