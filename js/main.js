@@ -52,23 +52,21 @@ const propiedades = [
 ];
 
 // Variables
+const listaPropiedades = document.querySelector("#listaPropiedades");
+const total = document.querySelector("#total");
 const formulario = document.querySelector("#form");
 const cantidadCuartos = document.querySelector("#cantidadCuartos");
 const min = document.querySelector("#min");
 const max = document.querySelector("#max");
-const total = document.querySelector("#total");
-const listaPropiedades = document.querySelector("#listaPropiedades");
 
 
-// Total de propiedades html
+// Total de propiedades html DOM
 total.innerHTML = `Total: ${propiedades.length}`;
 
-
-// Lista de propiedades HTML
 listaPropiedades.innerHTML = "";
 for (let propiedad of propiedades) {
     listaPropiedades.innerHTML += `
-        <article class="card text-center bg-info articulo p-1">
+    <article class="card text-center bg-info articulo">
             <img class="img-fluid" src="${propiedad.src}">
             <h4 class="text-dark">${propiedad.nombre}</h4>
             <h6 class="text-dark">Habitaciones: ${propiedad.cuartos}</h6>
@@ -78,6 +76,22 @@ for (let propiedad of propiedades) {
         </article>`
 };
 
-// Procesar el formulario
+// procesar formulario
+formulario.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-
+    listaPropiedades.innerHTML = "";
+    for (let propiedad of propiedades) {
+        if (propiedad.metros >= min.value && propiedad.metros <= max.value || propiedad.cuartos >= min.value && propiedad.cuartos >= max.value){
+            listaPropiedades.innerHTML += `
+            <article class="card text-center bg-info articulo">
+            <img class="img-fluid" src="${propiedad.src}">
+            <h4 class="text-dark">${propiedad.nombre}</h4>
+            <h6 class="text-dark">Habitaciones: ${propiedad.cuartos}</h6>
+            <h6 class="text-dark">Metros: ${propiedad.metros}</h6>
+            <p class="text-dark">${propiedad.descripcion}</p>
+            <a href="/propiedad/${propiedad.id}"><button class="btn btn-danger">Ver mas</button></a>
+        </article>`
+        }
+    }
+});

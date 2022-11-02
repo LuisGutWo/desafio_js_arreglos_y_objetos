@@ -10090,7 +10090,7 @@ progress {
     grid-template-areas: "navbar main-cards main-cards main-cards" "navbar main-cards main-cards main-cards";
   }
 }
-.main-container .dflex-extend, .main-container .main-section .row .button-container, .main-container .main-section .row .articulos, .main-container .main-section, .main-container .navbar .form-section, .main-container .navbar {
+.main-container .dflex-extend, .main-container .main-section, .main-container .navbar .form-section, .main-container .navbar {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10128,30 +10128,30 @@ progress {
   grid-area: main-cards;
   max-width: 100vw;
 }
-.main-container .main-section h4, .main-container .main-section .h4 {
-  margin: 10px 0 10px 0;
+@media (min-width: 768px) {
+  .main-container .main-section {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
-.main-container .main-section .row {
-  padding: 1rem;
-  row-gap: 1rem;
+.main-container .main-section .lista-propiedades {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-left: 1rem;
 }
-.main-container .main-section .row .articulos {
-  min-height: 30vh;
-  padding: 0;
-  background-color: #EAEAEA;
+.main-container .main-section .lista-propiedades .card {
+  width: 90%;
   overflow: hidden;
 }
-.main-container .main-section .row .articulos .articulo {
-  width: 250px;
-  padding: 10px;
+@media (min-width: 768px) {
+  .main-container .main-section .lista-propiedades .card {
+    width: 30%;
+  }
 }
-.main-container .main-section .row .button-container {
-  height: 4rem;
-  background-color: #EAEAEA;
-}
-.main-container .main-section .row .button-container .btn {
-  width: 30%;
-  margin: 0;
+.main-container .main-section h4, .main-container .main-section .h4 {
+  margin: 10px 0 10px 0;
+  font-size: 2rem;
 }
 
 /*# sourceMappingURL=style.css.map */
