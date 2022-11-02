@@ -17,88 +17,36 @@
     <section class="main-container">
 
         <!-- Navbar section -->
-        <nav class="navbar bg-secondary">
-            <div class="form-section mb-3">
+        <nav class="navbar bg-secondary" id="form">
+            <section class="form-section mb-3">
                 <label class="form-label text-white pb-2">Cantidad de cuartos:</label>
-                <input type="number" class="input-large col-form-control" id="cantidadCuartos">
-            </div>
+                <input type="text" class="input-large col-form-control text-center" placeholder="Num."
+                    id="cantidadCuartos">
+            </section>
             <p class="text-white pt-1 m-0">Metros Cuadrados:</p>
-            <div class="form-section-2">
+            <section class="form-section-2">
                 <div class="form-section">
                     <label for="form-label" class="text-white">desde:</label>
-                    <input type="number" class="input-small col-form-control">
+                    <input type="text" class="input-small col-form-control text-center" placeholder="min" id="min"
+                        value="100">
                 </div>
                 <div class="form-section">
                     <label for="form-label" class="text-white">hasta:</label>
-                    <input type="number" class="input-small col-form-control">
+                    <input type="text" class="input-small col-form-control text-center" placeholder="max" id="max"
+                        value="500">
                 </div>
-            </div>
+            </section>
             <button type="submit" class="btn btn-warning"><b>Buscar</b></button>
         </nav>
 
 
         <!-- Main Card Section -->
-        <main class="main-section container bg-info">
-            <h4>Total:</h4>
+        <main id="main-container" class="main-section container bg-info">
+            <h4 id="total">Total:</h4>
 
             <!-- card section -->
-            <div class="row">
-
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="card text-center">
-                        <img class="card-img-top" src="/assets/img/bf437fe7205cadf31dcfcc25e19c6776.png" alt="Title">
-                        <div class="card-body">
-                            <button type="submit" class="btn btn-primary">Ver mas</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="card text-center">
-                        <img class="card-img-top" src="/assets/img/CanquenNorte-Fachada-Small.webp" alt="Title">
-                        <div class="card-body">
-                            <button type="submit" class="btn btn-primary">Ver mas</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="card text-center">
-                        <img class="card-img-top" src="/assets/img/D_NQ_NP_722754-MLM51465451114_092022-W.jpg"
-                            alt="Title">
-                        <div class="card-body">
-                            <button type="submit" class="btn btn-primary">Ver mas</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="card text-center">
-                        <img class="card-img-top" src="/assets/img/D_NQ_NP_922045-MLC45638526616_042021-O.webp"
-                            alt="Title">
-                        <div class="card-body">
-                            <button type="submit" class="btn btn-primary">Ver mas</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="card text-center">
-                        <img class="card-img-top" src="/assets/img/n_wm_2019071800076950930.jpg" alt="Title">
-                        <div class="card-body">
-                            <button type="submit" class="btn btn-primary">Ver mas</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="card text-center">
-                        <img class="card-img-top" src="/assets/img/n_wm_2020012724139526475.jpg" alt="Title">
-                        <div class="card-body">
-                            <button type="submit" class="btn btn-primary">Ver mas</button>
-                        </div>
-                    </div>
-                </div>
+            <div class="lista-propiedades" id="listaPropiedades">
+                <div class="col-12 col-sm-6 col-lg-3"></div>
             </div>
 
         </main>
