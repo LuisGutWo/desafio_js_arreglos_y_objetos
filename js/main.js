@@ -1,4 +1,3 @@
-
 // Arreglo de objetos
 const propiedades = [
     {
@@ -59,39 +58,51 @@ const cantidadCuartos = document.querySelector("#cantidadCuartos");
 const min = document.querySelector("#min");
 const max = document.querySelector("#max");
 
-
-// Total de propiedades html DOM
-total.innerHTML = `Total: ${propiedades.length}`;
-
-listaPropiedades.innerHTML = "";
-for (let propiedad of propiedades) {
-    listaPropiedades.innerHTML += `
-    <article class="card text-center bg-info articulo">
-            <img class="img-fluid" src="${propiedad.src}">
-            <h4 class="text-dark">${propiedad.nombre}</h4>
-            <h6 class="text-dark">Habitaciones: ${propiedad.cuartos}</h6>
-            <h6 class="text-dark">Metros: ${propiedad.metros}</h6>
-            <p class="text-dark">${propiedad.descripcion}</p>
-            <a href="/propiedad/${propiedad.id}"><button class="btn btn-danger">Ver mas</button></a>
-        </article>`
+// Pintando el html
+const render = () => {
+    let html = "";
+    for (let propiedad of propiedades) {
+        html += `<article class="card text-center bg-info articulo">
+                     <img class="img-fluid" src="${propiedad.src}">
+                     <section class="card-body p-1">
+                         <h4 class=" card-title text-dark">${propiedad.nombre}</h4>
+                         <h6 class="text-dark">Habitaciones: ${propiedad.cuartos}</h6>
+                         <h6 class="text-dark">Metros: ${propiedad.metros}</h6>
+                         <p class="text-dark">${propiedad.descripcion}</p>
+                         <a href="/propiedad/${propiedad.id}"><button class="btn btn-danger">Ver mas</button></a>
+                     </section>
+                 </article>`;
+    }
+    listaPropiedades.innerHTML = html;
+    total.innerHTML = `Total: ${propiedades.length}`;
 };
 
-// procesar formulario
+
+// aplicando renderizacion
+render();
+
+formulario.addEventListener("reset", () => render());
+
 formulario.addEventListener("submit", (e) => {
     e.preventDefault();
-
-    listaPropiedades.innerHTML = "";
+    const numCuartos = +cantidadCuartos.value;
+    const minimo = +min.value;
+    const maximo = +max.value;
+    let html = "";
     for (let propiedad of propiedades) {
-        if (propiedad.metros >= min.value && propiedad.metros <= max.value || propiedad.cuartos >= min.value && propiedad.cuartos >= max.value){
-            listaPropiedades.innerHTML += `
+        if (propiedad.metros >= minimo && propiedad.metros <= maximo || propiedad.cuartos !== numCuartos) {
+            html += `
             <article class="card text-center bg-info articulo">
-            <img class="img-fluid" src="${propiedad.src}">
-            <h4 class="text-dark">${propiedad.nombre}</h4>
-            <h6 class="text-dark">Habitaciones: ${propiedad.cuartos}</h6>
-            <h6 class="text-dark">Metros: ${propiedad.metros}</h6>
-            <p class="text-dark">${propiedad.descripcion}</p>
-            <a href="/propiedad/${propiedad.id}"><button class="btn btn-danger">Ver mas</button></a>
-        </article>`
+             <img class="img-fluid" src="${propiedad.src}">
+             <section class="card-body p-1">
+                 <h4 class="text-dark">${propiedad.nombre}</h4>
+                 <h6 class="text-dark">Habitaciones: ${propiedad.cuartos}</h6>
+                 <h6 class="text-dark">Metros: ${propiedad.metros}</h6>
+                 <p class="text-dark">${propiedad.descripcion}</p>
+                 <a href="/propiedad/${propiedad.id}"><button class="btn btn-danger">Ver mas</button></a>
+             </section>
+         </article>`
         }
     }
+    listaPropiedades.innerHTML = html;
 });

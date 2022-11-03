@@ -12,8 +12,8 @@ $custom-colors: (
     "primary": $indigo-800,
     "secondary": $purple-800,
     "danger": $blue-500,
-    "info": $gray-500,
-    "succes": $gray-400,
+    "info": $gray-100,
+    "success": $gray-400,
 );
 // Merge the maps
 $theme-colors: map-merge($theme-colors, $custom-colors);
@@ -120,6 +120,12 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 
         .btn {
             margin: 2rem;
+
+            &:hover {
+                transform: scale(1.1);
+                transition: all 0.3s ease-in-out;
+
+            }
         }
     }
 
@@ -128,7 +134,7 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
         @extend .dflex-extend;
         grid-area: main-cards;
         max-width: 100vw;
-        
+
         @media (min-width: 768px) {
             display: flex;
             flex-wrap: wrap;
@@ -144,18 +150,25 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
                 width: 90%;
                 overflow: hidden;
 
+                &:hover {
+                    transition: all 0.3s ease-in-out;
+                    transform: scale(1.03);
+                    border: solid 1px black;
+                }
+
                 @media (min-width: 768px) {
                     width: 30%;
                 }
+
             }
-
-
         }
 
         h4 {
             margin: 10px 0 10px 0;
-            font-size: 2rem;
+            font-size: 1.5rem;
         }
-        }
+    }
 
-    };
+}
+
+;
