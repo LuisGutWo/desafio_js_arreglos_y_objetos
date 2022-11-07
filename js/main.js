@@ -2,7 +2,7 @@
 const propiedades = [
     {
         id: 10,
-        src: "./assets/img/bf437fe7205cadf31dcfcc25e19c6776.png",
+        src: "/assets/img/bf437fe7205cadf31dcfcc25e19c6776.png",
         nombre: "Casa en las Lomas",
         cuartos: 4,
         metros: 300,
@@ -10,7 +10,7 @@ const propiedades = [
     },
     {
         id: 11,
-        src: "./assets/img/n_wm_2019071800076950930.jpg",
+        src: "/assets/img/n_wm_2019071800076950930.jpg",
         nombre: "Casa en Bella Vista",
         cuartos: 3,
         metros: 100,
@@ -18,7 +18,7 @@ const propiedades = [
     },
     {
         id: 12,
-        src: "./assets/img/D_NQ_NP_922045-MLC45638526616_042021-O.webp",
+        src: "/assets/img/D_NQ_NP_922045-MLC45638526616_042021-O.webp",
         nombre: "Casa en Huechuraba",
         cuartos: 5,
         metros: 200,
@@ -26,7 +26,7 @@ const propiedades = [
     },
     {
         id: 13,
-        src: "./assets/img/CanquenNorte-Fachada-Small.webp",
+        src: "/assets/img/CanquenNorte-Fachada-Small.webp",
         nombre: "Casa en playa Papudo",
         cuartos: 6,
         metros: 500,
@@ -34,7 +34,7 @@ const propiedades = [
     },
     {
         id: 14,
-        src: "./assets/img/D_NQ_NP_722754-MLM51465451114_092022-W.jpg",
+        src: "/assets/img/D_NQ_NP_722754-MLM51465451114_092022-W.jpg",
         nombre: "Casa en Avenida Peru",
         cuartos: 4,
         metros: 300,
@@ -42,7 +42,7 @@ const propiedades = [
     },
     {
         id: 15,
-        src: "./assets/img/n_wm_2020012724139526475.jpg",
+        src: "/assets/img/n_wm_2020012724139526475.jpg",
         nombre: "Casa en Vitacura",
         cuartos: 4,
         metros: 200,
