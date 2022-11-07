@@ -71,7 +71,7 @@ const render = (array) => {
                          <h6 class="text-dark">Habitaciones: ${propiedad.cuartos}</h6>
                          <h6 class="text-dark">Metros: ${propiedad.metros}</h6>
                          <p class="text-dark">${propiedad.descripcion}</p>
-                         <a href="${propiedad.id}"><button class="btn btn-danger">Ver mas</button></a>
+                         <a href="#"><button class="btn btn-danger">Ver mas</button></a>
                      </section>
                  </article>`;
     }
@@ -85,7 +85,7 @@ const render = (array) => {
                          <h6 class="text-dark">Habitaciones: ${propiedad.cuartos}</h6>
                          <h6 class="text-dark">Metros: ${propiedad.metros}</h6>
                          <p class="text-dark">${propiedad.descripcion}</p>
-                         <a href="${propiedad.id}"><button class="btn btn-danger">Ver mas</button></a>
+                         <a href="#"><button class="btn btn-danger">Ver mas</button></a>
                      </section>
                  </article>`;
     }
@@ -106,7 +106,6 @@ formulario.addEventListener("submit", (e) => {
     const numCuartos = cantidadCuartos.value;
     const minimo = +min.value;
     const maximo = +max.value;
-    // let html = "";
 
     const arrayFiltrado = [];
     for (let propiedad of propiedades) {
