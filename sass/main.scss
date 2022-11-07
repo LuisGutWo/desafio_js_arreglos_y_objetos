@@ -150,8 +150,9 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
                 width: 90%;
                 overflow: hidden;
 
+
                 &:hover {
-                    transition: all 0.3s ease-in-out;
+                    transition: all 0.3s ease-out;
                     transform: scale(1.03);
                     border: solid 1px black;
                 }

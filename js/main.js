@@ -6,7 +6,7 @@ const propiedades = [
         nombre: "Casa en las Lomas",
         cuartos: 4,
         metros: 200,
-        descripcion: "Hermosa y tranquila casa en urbanizacion los Almendros"
+        descripcion: "Hermosa y tranquila casa en urbanizacion los Almendros. seguridad privada y facil eccesibilidad"
     },
     {
         id: 11,
@@ -14,23 +14,23 @@ const propiedades = [
         nombre: "Casa en Bella Vista",
         cuartos: 3,
         metros: 100,
-        descripcion: "Hermosa propiedade, moderna y traqnuila"
+        descripcion: "Propiedad moderna y traqnuila. seguridad privada las 24 horas"
     },
     {
         id: 12,
         src: "assets/img/D_NQ_NP_922045-MLC45638526616_042021-O.webp",
-        nombre: "Casa en playa Papudo",
+        nombre: "Casa en Huechuraba",
         cuartos: 5,
         metros: 300,
-        descripcion: "El respirar aire puro y el estar cerca a laplaya sonuna bendicion"
+        descripcion: "Urbanizacion nueva de facil acceso y barrios comerciales colindantes. Condominio Pedro Fontova, Huechuraba"
     },
     {
         id: 13,
         src: "assets/img/CanquenNorte-Fachada-Small.webp",
-        nombre: "Casa en Canquen Norte",
+        nombre: "Casa en playa Papudo",
         cuartos: 6,
         metros: 400,
-        descripcion: "Tranquila casa de campo en un sector privilegiado con piscina y quincho"
+        descripcion: "Tranquila casa a 5 minutos de la playa en sector privilegiado con piscina y quincho"
     },
     {
         id: 14,
@@ -38,7 +38,7 @@ const propiedades = [
         nombre: "Casa en Avenida Peru",
         cuartos: 5,
         metros: 200,
-        descripcion: "Casa moderna, amplia y muy centrico..."
+        descripcion: "Casa moderna, amplia y muy centrica. Sector tranquilo y con seguridad privada..."
     },
     {
         id: 15,
@@ -46,63 +46,73 @@ const propiedades = [
         nombre: "Casa en Vitacura",
         cuartos: 4,
         metros: 200,
-        descripcion: "El mejor sector para vivir, en el corazon de la ciudad"
+        descripcion: "El mejor sector para vivir en Santiago, en el corazon de la ciudad y con todas la comodidades a solo unos pasos..."
     },
 ];
 
 // Variables
 const listaPropiedades = document.querySelector("#listaPropiedades");
-const total = document.querySelector("#total");
-const formulario = document.querySelector("#form");
 const cantidadCuartos = document.querySelector("#cantidadCuartos");
+const formulario = document.querySelector("#form");
 const min = document.querySelector("#min");
 const max = document.querySelector("#max");
+const total = document.querySelector("#total");
 
 // Pintando el html
-const render = () => {
-    let html = "";
-    for (let propiedad of propiedades) {
-        html += `<article class="card text-center bg-info articulo">
+const render = (array) => {
+
+    // condicional de alerta
+    if (array.length === 0) {
+        alert("Debes ingresar los datos para empezar la busqueda")
+        html += `<article class="card text-center bg-info articulo mb-3">
                      <img class="img-fluid" src="${propiedad.src}">
                      <section class="card-body p-1">
                          <h4 class=" card-title text-dark">${propiedad.nombre}</h4>
                          <h6 class="text-dark">Habitaciones: ${propiedad.cuartos}</h6>
                          <h6 class="text-dark">Metros: ${propiedad.metros}</h6>
                          <p class="text-dark">${propiedad.descripcion}</p>
-                         <a href="/propiedad/${propiedad.id}"><button class="btn btn-danger">Ver mas</button></a>
+                         <a href="${propiedad.id}"><button class="btn btn-danger">Ver mas</button></a>
+                     </section>
+                 </article>`;
+    }
+
+    let html = "";
+    for (let propiedad of array) {
+        html += `<article class="card text-center bg-info articulo mb-3">
+                     <img class="img-fluid" src="${propiedad.src}">
+                     <section class="card-body p-1">
+                         <h4 class=" card-title text-dark">${propiedad.nombre}</h4>
+                         <h6 class="text-dark">Habitaciones: ${propiedad.cuartos}</h6>
+                         <h6 class="text-dark">Metros: ${propiedad.metros}</h6>
+                         <p class="text-dark">${propiedad.descripcion}</p>
+                         <a href="${propiedad.id}"><button class="btn btn-danger">Ver mas</button></a>
                      </section>
                  </article>`;
     }
     listaPropiedades.innerHTML = html;
-    total.innerHTML = `Total: ${propiedades.length}`;
+    total.innerHTML = `Total: ${array.length}`;
 };
 
-
 // aplicando renderizacion
-render();
+render(propiedades);
 
-formulario.addEventListener("reset", () => render());
+// evento reset
+formulario.addEventListener("reset", () => render(propiedades));
 
+
+// evento buscar
 formulario.addEventListener("submit", (e) => {
     e.preventDefault();
-    const numCuartos = +cantidadCuartos.value;
+    const numCuartos = cantidadCuartos.value;
     const minimo = +min.value;
     const maximo = +max.value;
-    let html = "";
+    // let html = "";
+
+    const arrayFiltrado = [];
     for (let propiedad of propiedades) {
-        if (propiedad.metros >= minimo && propiedad.metros <= maximo || propiedad.cuartos !== numCuartos) {
-            html += `
-            <article class="card text-center bg-info articulo">
-             <img class="img-fluid" src="${propiedad.src}">
-             <section class="card-body p-1">
-                 <h4 class="text-dark">${propiedad.nombre}</h4>
-                 <h6 class="text-dark">Habitaciones: ${propiedad.cuartos}</h6>
-                 <h6 class="text-dark">Metros: ${propiedad.metros}</h6>
-                 <p class="text-dark">${propiedad.descripcion}</p>
-                 <a href="/propiedad/${propiedad.id}"><button class="btn btn-danger">Ver mas</button></a>
-             </section>
-         </article>`
+        if (propiedad.metros >= minimo && propiedad.metros <= maximo && propiedad.cuartos <= numCuartos) {
+            arrayFiltrado.push(propiedad);
         }
-    }
-    listaPropiedades.innerHTML = html;
+    };
+    render(arrayFiltrado);
 });

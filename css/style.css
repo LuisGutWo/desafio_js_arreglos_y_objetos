@@ -10063,7 +10063,7 @@ progress {
   overflow: hidden;
 }
 .main-container .main-section .lista-propiedades .card:hover {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-out;
   transform: scale(1.03);
   border: solid 1px black;
 }
