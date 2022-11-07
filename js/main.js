@@ -2,7 +2,7 @@
 const propiedades = [
     {
         id: 10,
-        src: "/assets/img/casa_las_lomas.png",
+        src: "../assets/img/casa_las_lomas.png",
         nombre: "Casa en las Lomas",
         cuartos: 4,
         metros: 300,
@@ -10,7 +10,7 @@ const propiedades = [
     },
     {
         id: 11,
-        src: "/assets/img/casa_bellavista.jpg",
+        src: "../assets/img/casa_bellavista.jpg",
         nombre: "Casa en Bella Vista",
         cuartos: 3,
         metros: 100,
@@ -18,7 +18,7 @@ const propiedades = [
     },
     {
         id: 12,
-        src: "/assets/img/casa_huechuraba.jpg",
+        src: "../assets/img/casa_huechuraba.jpg",
         nombre: "Casa en Huechuraba",
         cuartos: 5,
         metros: 200,
@@ -26,7 +26,7 @@ const propiedades = [
     },
     {
         id: 13,
-        src: "/assets/img/casa_playa.jpg",
+        src: "../assets/img/casa_playa.jpg",
         nombre: "Casa en playa Papudo",
         cuartos: 6,
         metros: 500,
@@ -34,7 +34,7 @@ const propiedades = [
     },
     {
         id: 14,
-        src: "/assets/img/casa_av_peru.jpg",
+        src: "../assets/img/casa_av_peru.jpg",
         nombre: "Casa en Avenida Peru",
         cuartos: 4,
         metros: 300,
@@ -42,7 +42,7 @@ const propiedades = [
     },
     {
         id: 15,
-        src: "assets/img/casa_vitacura.jpg",
+        src: "../assets/img/casa_vitacura.jpg",
         nombre: "Casa en Vitacura",
         cuartos: 4,
         metros: 200,
