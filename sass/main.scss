@@ -167,6 +167,7 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
         h4 {
             margin: 10px 0 10px 0;
             font-size: 1.5rem;
+            box-shadow: grey 0 1px 0;
         }
     }
 
